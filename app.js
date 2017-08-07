@@ -112,7 +112,7 @@ app.get('/getDetailData',function(req,res){
 	option.path+=url.join('&');
 
 	getHttp(option,function(_d){
-		res.status(200).json({success:true,result:result});
+		res.status(200).json({success:true,result:_d});
 	})
 })
 

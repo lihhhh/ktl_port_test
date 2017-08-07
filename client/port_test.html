@@ -166,7 +166,12 @@
         			params:params
         		}).success(function(_d){
         			if(_d.success){
-        				$scope.model.rows=_d.result;
+        				if(/\{/g.test(_d.result)){
+        					$scope.model.rows=JSON.stringify(JSON.parse(_d.result),null,1);
+        				}else{
+        					$scope.model.rows=_d.result,null,1;
+        				}
+        				
         			}
         		})
         	}
