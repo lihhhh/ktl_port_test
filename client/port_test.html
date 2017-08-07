@@ -90,13 +90,13 @@
 		<lable>前缀</lable><input type="text" class="label-url width-300" ng-model="portUrl_start">
 		<lable>后缀</lable>
 		<div class="ps-r" style="width:200px;display:inline-block" ng-init='model.isShow=false'>
-			<input type="text" class="label-url width-200 cursor-pointer" placeholder="请选择接口" ng-click="showlist();model.isShow=!model.isShow" name="">
+			<input type="text" ng-model='model.url' class="label-url width-200 cursor-pointer" placeholder="请选择接口" ng-click="showlist();model.isShow=!model.isShow" name="">
 			<i class="fa fa-sort-down icon"></i>
 			<ul class="oneview" ng-show="model.isShow">
 				<li ng-repeat="list in model.urlList">
 					{{list.title}}
 					<ul class="child-ul">
-						<li ng-repeat="item in list.data" ng-click="getDetail(item.pointer_url);model.isShow=false">{{item.name+' '+item.url}}</li>
+						<li ng-repeat="item in list.data" ng-click="getDetail(item.pointer_url);model.isShow=false;model.url=item.url">{{item.name+' '+item.url}}</li>
 					</ul>
 				</li>
 			</ul>
@@ -127,7 +127,7 @@
         		isShow:false,
         		urlList:[],
         		detail:{},
-        		pointer_url:'',
+        		url:'',
         		rows:''
         	}
 
@@ -142,7 +142,6 @@
     		})
 
         	$scope.getDetail=function(pointer_url){
-        		$scope.model.pointer_url=pointer_url;
         		$http({
         			method:'get',
         			url:'/getDetail',
@@ -156,7 +155,7 @@
 
         	$scope.getDetailData = function(){
         		var params = {};
-        		params.pointer_url=$scope.model.pointer_url;
+        		params.pointer_url=$scope.model.url;
         		$scope.model.detail.forEach(function(item){
         			console.log(item);
         			params[item.field]=item[item.field+'_'+'data'];
