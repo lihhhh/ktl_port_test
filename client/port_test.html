@@ -6,19 +6,27 @@
 		* {
 			box-sizing: border-box;
 		}
+		body {
+			background: #8d9d94;
+			height: 2000px;
+		}
 		ul {
 			padding: 0;
 	    	margin: 0;
+	    	font-size: 13px;
 	    	list-style: none;
 	    	border: 1px solid #717272;
 	    	border-radius: 4px;
 	    	cursor: pointer;
+	    	background: rgba(0,0,0,0.7);
+	    	color: white;
 		}
 		ul li {
 			position: relative;
+			padding: 6px;
 		}
 		ul li:hover {
-			background: red;
+			background: #7c7373;
 		}
 		ul li:hover>ul {
 			display: block;
@@ -63,9 +71,9 @@
 	    .child-ul {
 	    	position: absolute;
 	    	display: none;
-	    	width: 200px;
+	    	width: 400px;
 	    	top: 0;
-	    	right: -200px;
+	    	right: -400px;
 	    }
 	    .cursor-pointer {
 	    	cursor: pointer;
@@ -81,34 +89,32 @@
 	<div>
 		<lable>前缀</lable><input type="text" class="label-url width-300" ng-model="portUrl_start">
 		<lable>后缀</lable>
-		<div class="ps-r" style="width:200px;display:inline-block" ng-init='isShow=false'>
-			<input type="text" class="label-url width-200 cursor-pointer" placeholder="请选择接口" ng-click="showlist();isShow=!isShow" name="">
+		<div class="ps-r" style="width:200px;display:inline-block" ng-init='model.isShow=false'>
+			<input type="text" class="label-url width-200 cursor-pointer" placeholder="请选择接口" ng-click="showlist();model.isShow=!model.isShow" name="">
 			<i class="fa fa-sort-down icon"></i>
-			<ul class="oneview" ng-show="isShow">
-				<li ng-repeat="item in model.urlList">
-					{{item.title}}
+			<ul class="oneview" ng-show="model.isShow">
+				<li ng-repeat="list in model.urlList">
+					{{list.title}}
 					<ul class="child-ul">
-						<li ng-click="getDetail()">456</li>
-						<li ng-click="getDetail()">456</li>
-						<li ng-click="getDetail()">456</li>
-						<li ng-click="getDetail()">456</li>
-						<li ng-click="getDetail()">456</li>
+						<li ng-repeat="item in list.data" ng-click="getDetail(item.pointer_url);model.isShow=false">{{item.name+' '+item.url}}</li>
 					</ul>
 				</li>
 			</ul>
 		</div>
 	</div>
 	<h3>参数配置</h3>
-	<div>
-		<label>参数名</label><input type="text" class="label-url" name="">
-		<label>参数值</label><input type="text" class="label-url width-400" name="">
+	<form id='dataform'>
+		<div style="margin-top: 12px;" ng-repeat="dtl in model.detail">
+			<label>参数名</label><input type="text" ng-model='dtl.field' class="label-url" name="{{dtl.field}}">
+			<label>参数值</label><input type="text" ng-model="dtl[dtl.field+'_'+'data']" class="label-url width-400" name="{{dtl.field+'_'+'data'}}">
+		</div>
+	</form>
+	
+	<div style="text-align:left;margin-top: 30px;">
+		<button ng-click="getDetailData()">请求数据</button>
 	</div>
-	<div>
-		<label>参数名</label><input type="text" class="label-url" name="">
-		<label>参数值</label><input type="text" class="label-url width-400" name="">
-	</div>
-	<div style="text-align:right">
-		<button>添加</button>
+	<div style="margin-top: 20px;">
+		<pre>{{model.rows}}</pre>
 	</div>
 </div>
 	
@@ -118,11 +124,11 @@
         	$scope.portUrl_start = "http://192.168.10.133:8080/ktl/";
         	$scope.portUrl_end = "resource/getSourceData";
         	$scope.model = {
-        		urlList:[{
-        			title:'导出',
-        			data:[]
-        		}],
-        		detail:{}
+        		isShow:false,
+        		urlList:[],
+        		detail:{},
+        		pointer_url:'',
+        		rows:''
         	}
 
         	$http({
@@ -130,22 +136,41 @@
     			url:'/getData',
     			params:{}
     		}).success(function(_d){
-    			if(success){
+    			if(_d.success){
     				$scope.model.urlList=_d.result;
     			}
     		})
 
-        	$scope.getDetail=function(value){
+        	$scope.getDetail=function(pointer_url){
+        		$scope.model.pointer_url=pointer_url;
         		$http({
         			method:'get',
         			url:'/getDetail',
-        			params:{value:value}
+        			params:{pointer_url:pointer_url}
         		}).success(function(_d){
-        			if(success){
+        			if(_d.success){
         				$scope.model.detail=_d.result;
         			}
         		})
         	};
+
+        	$scope.getDetailData = function(){
+        		var params = {};
+        		params.pointer_url=$scope.model.pointer_url;
+        		$scope.model.detail.forEach(function(item){
+        			console.log(item);
+        			params[item.field]=item[item.field+'_'+'data'];
+        		})
+        		$http({
+        			method:'get',
+        			url:'/getDetailData',
+        			params:params
+        		}).success(function(_d){
+        			if(_d.success){
+        				$scope.model.rows=_d.result;
+        			}
+        		})
+        	}
         }])
 	</script>
 </body>

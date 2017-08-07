@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var http = require('http');
+var fs = require('fs');
 var cheerio = require('cheerio');
 var iconv = require('iconv-lite');
 
@@ -32,11 +33,14 @@ app.get('/getData',function(req,res){
 	    port: '8080',
 	    path: '/ktl/help.jsp'
 	};
+	// fs.readFile(__dirname+'/getData.txt',function(err,text){
+	// 	if(err) return res.status(400).json({success:false,err:'错误'});
+	// 	var html = text;
+		
+	// })
 	getHttp(option,function(html){
-		//html = iconv.decode(new Buffer(html),'utf-8');
 		var $ = cheerio.load(html);
 
-		console.log($);
 		var result = [];
 		$('table').get().map(function(item){
 			var temp = {
@@ -54,18 +58,61 @@ app.get('/getData',function(req,res){
 			result.push(temp);
 		})
 		console.log(result);
+		res.status(200).json({success:true,result:result});
 	})
 })
 
-app.get('/getpointer_url',function(req,res){
+app.get('/getDetail',function(req,res){
 	var query = req.query;
 	var option = {
 	    hostname: '192.168.10.133',
 	    port: '8080',
 	    path: '/ktl/'+query.pointer_url
 	};
+
+	// fs.readFile(__dirname+'/detail.txt',function(err,text){
+	// 	if(err) return res.status(400).json({success:false,err:'错误'});
+		
+	// })
 	getHttp(option,function(html){
 		var $ = cheerio.load(html);
+		var result = [];
+		$('table').eq(0).find('tr').get().map(function(tr,index){
+			
+			if(index>0){
+				var temp = {};
+				$(tr).find('td').get().map(function(td,index){
+					if(index==1){
+						temp.field = $(td).text();
+					}
+				})
+				result.push(temp);
+			}
+			
+		})
+		console.log(result);
+		res.status(200).json({success:true,result:result});
+	})
+})
+
+app.get('/getDetailData',function(req,res){
+	var query = req.query;
+	console.log(query);
+	var option = {
+	    hostname: '192.168.10.133',
+	    port: '8080',
+	    path: '/ktl/'+query.pointer_url+'?'
+	};
+	var url = [];
+	for(var key in query){
+		if(key!='pointer_url'){
+			url.push(key+'='+query[key]);
+		}
+	}
+	option.path+=url.join('&');
+
+	getHttp(option,function(_d){
+		res.status(200).json({success:true,result:result});
 	})
 })
 
