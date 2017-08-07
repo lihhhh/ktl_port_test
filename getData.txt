@@ -1,0 +1,698 @@
+<html><head></head><body>
+
+<div>role:角色管理:角色管理</div>
+
+
+<div>角色管理</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=role/select" target="_blank">role/select</a></td>
+<td width="25%">分页查询角色</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=role/getRoleRow" target="_blank">role/getRoleRow</a></td>
+<td width="25%">查询单条角色信息</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=role/save" target="_blank">role/save</a></td>
+<td width="25%">保存角色</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=role/delete" target="_blank">role/delete</a></td>
+<td width="25%">删除角色</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=role/getRoleTree" target="_blank">role/getRoleTree</a></td>
+<td width="25%">获取角色树</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+
+
+<div>resource:资源类功能:null</div>
+
+
+<div>导出资源</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=resource/getResourceTree" target="_blank">resource/getResourceTree</a></td>
+<td width="25%">导出树接口</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=resource/exportResource" target="_blank">resource/exportResource</a></td>
+<td width="25%">导出作业、转换、数据库连接接口</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=resource/saveTemplate" target="_blank">resource/saveTemplate</a></td>
+<td width="25%">导入模板保存</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=resource/getTemplateList" target="_blank">resource/getTemplateList</a></td>
+<td width="25%">导入导出模板列表</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=resource/getExportTemplateTree" target="_blank">resource/getExportTemplateTree</a></td>
+<td width="25%">根据导出模板获取树结构</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+<div>导入资源</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=resource/getResourceTreeByNode" target="_blank">resource/getResourceTreeByNode</a></td>
+<td width="25%">导入树接口</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=resource/getSourceData" target="_blank">resource/getSourceData</a></td>
+<td width="25%">导入zip包</td>
+<td width="50%">导入zip包，并且返回数据,这里会返回一个key，这个key在resource/importSource有用</td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=resource/importSource" target="_blank">resource/importSource</a></td>
+<td width="25%">导入作业、转换、数据库连接接口</td>
+<td width="50%">需要resource/getSourceData返回的key</td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=resource/saveTemplate" target="_blank">resource/saveTemplate</a></td>
+<td width="25%">导入模板保存</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=resource/getTemplateList" target="_blank">resource/getTemplateList</a></td>
+<td width="25%">导入导出模板列表</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=resource/getImportTemplateTree" target="_blank">resource/getImportTemplateTree</a></td>
+<td width="25%">根据导入模板获取树结构</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+
+
+<div>monitor:全息监控:全息监控</div>
+
+
+<div>系统监控</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=monitor/getSlave" target="_blank">monitor/getSlave</a></td>
+<td width="25%">获取子节点</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=monitor/getProcess" target="_blank">monitor/getProcess</a></td>
+<td width="25%">获取作业进程</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+
+
+<div>menu:菜单管理:菜单管理</div>
+
+
+<div>菜单管理</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=menu/select" target="_blank">menu/select</a></td>
+<td width="25%">分页查询菜单</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=menu/getMenuRow" target="_blank">menu/getMenuRow</a></td>
+<td width="25%">查询单条菜单信息</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=menu/save" target="_blank">menu/save</a></td>
+<td width="25%">保存菜单</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=menu/delete" target="_blank">menu/delete</a></td>
+<td width="25%">删除菜单</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+
+
+<div>script:js脚本控件:控件</div>
+
+
+<div>js脚本控件</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=script/getVariable" target="_blank">script/getVariable</a></td>
+<td width="25%">获取变量</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+
+
+<div>schedule:调度中心:作业调度</div>
+
+
+<div>调度列表页面</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=schedule/select" target="_blank">schedule/select</a></td>
+<td width="25%">调度中心列表</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=schedule/getCount" target="_blank">schedule/getCount</a></td>
+<td width="25%">作业状态统计</td>
+<td width="50%">需要根据文件夹进行筛选，包含子目录</td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=schedule/getSpeed" target="_blank">schedule/getSpeed</a></td>
+<td width="25%">正在运行作业的性能和状态轮询</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=schedule/getJobMetric" target="_blank">schedule/getJobMetric</a></td>
+<td width="25%">正在运行作业度量</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=schedule/getJobMetricHistory" target="_blank">schedule/getJobMetricHistory</a></td>
+<td width="25%">最近一次执行结束的作业度量</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=schedule/getJobRowInfo" target="_blank">schedule/getJobRowInfo</a></td>
+<td width="25%">作业配置信息</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+<div>作业</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=schedule/start" target="_blank">schedule/start</a></td>
+<td width="25%">启动作业</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=schedule/stop" target="_blank">schedule/stop</a></td>
+<td width="25%">停止作业</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=schedule/changePosition" target="_blank">schedule/changePosition</a></td>
+<td width="25%">作业等待启动队列 插队</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+<div>作业详情</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=schedule/getJobInfoHistory" target="_blank">schedule/getJobInfoHistory</a></td>
+<td width="25%">获取历史作业调度信息</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=schedule/getTransInfoHistory" target="_blank">schedule/getTransInfoHistory</a></td>
+<td width="25%">获取作业调度下的转换调度历史信息</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=schedule/getStepInfo" target="_blank">schedule/getStepInfo</a></td>
+<td width="25%">转换的度量，也就是步骤度量</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=schedule/getJobLog" target="_blank">schedule/getJobLog</a></td>
+<td width="25%">作业日志</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=schedule/getJobErrorLog" target="_blank">schedule/getJobErrorLog</a></td>
+<td width="25%">作业ERROR日志</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+<div>调度信息</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=jobSync/save" target="_blank">jobSync/save</a></td>
+<td width="25%">保存周期模板接口</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=schedule/save" target="_blank">schedule/save</a></td>
+<td width="25%">保存作业周期信息接口</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+
+
+<div>devlop:开发中心:转化和作业设计中心</div>
+
+
+<div>开发中心</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=develop/preview" target="_blank">develop/preview</a></td>
+<td width="25%">预览转换</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=develop/run/trans" target="_blank">develop/run/trans</a></td>
+<td width="25%">启动转换</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=develop/pause/trans" target="_blank">develop/pause/trans</a></td>
+<td width="25%">暂停转换</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=develop/resume/trans" target="_blank">develop/resume/trans</a></td>
+<td width="25%">继续转换</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=develop/stop/trans" target="_blank">develop/stop/trans</a></td>
+<td width="25%">停止转换</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=develop/verify/trans" target="_blank">develop/verify/trans</a></td>
+<td width="25%">校验转换</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=develop/getTransTree" target="_blank">develop/getTransTree</a></td>
+<td width="25%">在作业下转换进口中的转换树</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+
+
+<div>connection:db连接:db连接</div>
+
+
+<div>调度列表页面</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=connection/testConnection" target="_blank">connection/testConnection</a></td>
+<td width="25%">db连接测试</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=connection/check" target="_blank">connection/check</a></td>
+<td width="25%">根据ID检测DB连接, 检测时间超过10秒判断为连接失败</td>
+<td width="50%">多个以 , 分隔</td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+
+
+<div>ElasticSearch控件接口:step:ElasticSearch控件</div>
+
+
+<div>ElasticSearch控件描述</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=connection/getElasticSearchDatabaseList" target="_blank">connection/getElasticSearchDatabaseList</a></td>
+<td width="25%">获取ElasticSearch DB连接</td>
+<td width="50%">获取ElasticSearch DB连接</td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=elasticsearch/getIndex" target="_blank">elasticsearch/getIndex</a></td>
+<td width="25%">获取索引</td>
+<td width="50%">获取索引</td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=elasticsearch/getIndexType" target="_blank">elasticsearch/getIndexType</a></td>
+<td width="25%">获取索引类型</td>
+<td width="50%">获取索引类型</td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=elasticsearch/createIndex" target="_blank">elasticsearch/createIndex</a></td>
+<td width="25%">创建索引</td>
+<td width="50%">创建索引</td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=elasticsearch/getMapping" target="_blank">elasticsearch/getMapping</a></td>
+<td width="25%">获取mapping</td>
+<td width="50%">获取mapping</td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=elasticsearch/commitMapping" target="_blank">elasticsearch/commitMapping</a></td>
+<td width="25%">提交mapping</td>
+<td width="50%">提交mapping</td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=elasticsearch/deleteMapping" target="_blank">elasticsearch/deleteMapping</a></td>
+<td width="25%">删除mapping</td>
+<td width="50%">删除mapping</td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+
+
+<div>user:用户管理:用户管理</div>
+
+
+<div>用户</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=user/login" target="_blank">user/login</a></td>
+<td width="25%">用户登录</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=user/logout" target="_blank">user/logout</a></td>
+<td width="25%">用户退出</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+<div>用户管理</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=user/select" target="_blank">user/select</a></td>
+<td width="25%">查询用户</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=user/getUserRow" target="_blank">user/getUserRow</a></td>
+<td width="25%">查询单条用户信息</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=user/save" target="_blank">user/save</a></td>
+<td width="25%">保存用户</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=user/modifiedPassword" target="_blank">user/modifiedPassword</a></td>
+<td width="25%">修改密码</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=user/initializePassword" target="_blank">user/initializePassword</a></td>
+<td width="25%">初始化密码</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=user/delete" target="_blank">user/delete</a></td>
+<td width="25%">删除用户</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+
+
+<div>hbase:HBase控件:控件</div>
+
+
+<div></div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=HBase/getTypeList" target="_blank">HBase/getTypeList</a></td>
+<td width="25%">获取mapping类型</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=HBase/getShimList" target="_blank">HBase/getShimList</a></td>
+<td width="25%">获取HBase集群类型</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=HBase/getTable" target="_blank">HBase/getTable</a></td>
+<td width="25%">获取表</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=HBase/getMappingTable" target="_blank">HBase/getMappingTable</a></td>
+<td width="25%">获取Mapping表</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=HBase/getMapping" target="_blank">HBase/getMapping</a></td>
+<td width="25%">获取映射</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=HBase/getColumn" target="_blank">HBase/getColumn</a></td>
+<td width="25%">获取映射字段</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=HBase/saveMapping" target="_blank">HBase/saveMapping</a></td>
+<td width="25%">保存映射</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=HBase/deleteMapping" target="_blank">HBase/deleteMapping</a></td>
+<td width="25%">删除映射</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=HBase/createTable" target="_blank">HBase/createTable</a></td>
+<td width="25%">创建表</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=HBase/truncateTable" target="_blank">HBase/truncateTable</a></td>
+<td width="25%">清空表</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+
+
+<div>table:表输入输出:控件</div>
+
+
+<div></div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=table/getField" target="_blank">table/getField</a></td>
+<td width="25%">根据sql语句获取字段</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=table/generateSQL" target="_blank">table/generateSQL</a></td>
+<td width="25%">生成sql语句</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=table/execute" target="_blank">table/execute</a></td>
+<td width="25%">执行sql语句</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+
+
+<div>statistics:统计分析:流量统计</div>
+
+
+<div>趋势图</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=statistics/getDataTrend/hour" target="_blank">statistics/getDataTrend/hour</a></td>
+<td width="25%">按小时趋势图分析</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=statistics/getDataTrend/day" target="_blank">statistics/getDataTrend/day</a></td>
+<td width="25%">按天趋势图分析</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+<div>作业统计</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=statistics/getJobTrend/hour" target="_blank">statistics/getJobTrend/hour</a></td>
+<td width="25%">按小时作业统计</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=statistics/getJobTrend/day" target="_blank">statistics/getJobTrend/day</a></td>
+<td width="25%">按天作业统计</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=statistics/getJobList" target="_blank">statistics/getJobList</a></td>
+<td width="25%">获取作业统计分页</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+<div>节点统计</div>
+<table>
+
+<tbody><tr>
+<td width="25%"><a href="api.jsp?id=statistics/getSlaveTrend/hour" target="_blank">statistics/getSlaveTrend/hour</a></td>
+<td width="25%">按小时节点统计</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=statistics/getSlaveTrend/day" target="_blank">statistics/getSlaveTrend/day</a></td>
+<td width="25%">按天节点统计</td>
+<td width="50%"></td>
+</tr>
+
+<tr>
+<td width="25%"><a href="api.jsp?id=statistics/getSlaveList" target="_blank">statistics/getSlaveList</a></td>
+<td width="25%">获取节点统计分页</td>
+<td width="50%"></td>
+</tr>
+
+</tbody></table>
+<br><br>
+
+
+
+
+<style>
+        table,table tr th, table tr td { border:1px solid #0094ff; }
+        table {width:100%;min-height: 25px; line-height: 25px; text-align: center; border-collapse: collapse;}   
+    </style>
+
+<div style="position: static; display: none; width: 0px; height: 0px; border: none; padding: 0px; margin: 0px;"><div id="trans-tooltip"><div id="tip-left-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-left-top.png&quot;);"></div><div id="tip-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-top.png&quot;) repeat-x;"></div><div id="tip-right-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-right-top.png&quot;);"></div><div id="tip-right" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-right.png&quot;) repeat-y;"></div><div id="tip-right-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-right-bottom.png&quot;);"></div><div id="tip-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-bottom.png&quot;) repeat-x;"></div><div id="tip-left-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-left-bottom.png&quot;);"></div><div id="tip-left" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-left.png&quot;);"></div><div id="trans-content"></div></div><div id="tip-arrow-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-arrow-bottom.png&quot;);"></div><div id="tip-arrow-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-arrow-top.png&quot;);"></div></div></body></html>
