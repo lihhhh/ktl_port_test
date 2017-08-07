@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller='myCtrl'>
+<head>
+	<title>ktl接口测试</title>
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+		}
+		ul {
+			padding: 0;
+	    	margin: 0;
+	    	list-style: none;
+	    	border: 1px solid #717272;
+	    	border-radius: 4px;
+	    	cursor: pointer;
+		}
+		ul li {
+			position: relative;
+		}
+		ul li:hover {
+			background: red;
+		}
+		ul li:hover>ul {
+			display: block;
+		}
+		.ps-r {
+			position: relative;
+		}
+		.label-url {
+	        vertical-align: middle;
+	        color: #585858;
+	        margin-right: 30px;
+	        height: 38px;
+	        display: inline-block;
+	        line-height: 38px;
+	        /* padding-left: 40px; */
+	        text-align: center;
+	        border: 1px solid #405d76;
+	        font-size: 13px;
+	        border-radius: 4px;
+	    }
+	    .width-400 {
+	    	width: 400px;
+	    }
+	    .width-300 {
+	    	width: 300px;
+	    }
+	    .width-200 {
+	    	width: 200px;
+	    }
+	    .icon {
+	    	position: absolute;
+	    	top: 9px;
+	    	right: 12px;
+	    }
+	    .oneview {
+	    	position: absolute;
+	    	width: 100%;
+	    	top: 37px;
+	    	left: 0;
+	    	text-align: center;
+	    }
+	    .child-ul {
+	    	position: absolute;
+	    	display: none;
+	    	width: 200px;
+	    	top: 0;
+	    	right: -200px;
+	    }
+	    .cursor-pointer {
+	    	cursor: pointer;
+	    }
+	</style>
+
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/angular.js/1.2.0/angular.js"></script>
+</head>
+<body>
+<div style="width:800px;margin:0 auto;">
+	<h3>接口url</h3>
+	<div>
+		<lable>前缀</lable><input type="text" class="label-url width-300" ng-model="portUrl_start">
+		<lable>后缀</lable>
+		<div class="ps-r" style="width:200px;display:inline-block" ng-init='isShow=false'>
+			<input type="text" class="label-url width-200 cursor-pointer" placeholder="请选择接口" ng-click="showlist();isShow=!isShow" name="">
+			<i class="fa fa-sort-down icon"></i>
+			<ul class="oneview" ng-show="isShow">
+				<li ng-repeat="item in model.urlList">
+					{{item.title}}
+					<ul class="child-ul">
+						<li ng-click="getDetail()">456</li>
+						<li ng-click="getDetail()">456</li>
+						<li ng-click="getDetail()">456</li>
+						<li ng-click="getDetail()">456</li>
+						<li ng-click="getDetail()">456</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<h3>参数配置</h3>
+	<div>
+		<label>参数名</label><input type="text" class="label-url" name="">
+		<label>参数值</label><input type="text" class="label-url width-400" name="">
+	</div>
+	<div>
+		<label>参数名</label><input type="text" class="label-url" name="">
+		<label>参数值</label><input type="text" class="label-url width-400" name="">
+	</div>
+	<div style="text-align:right">
+		<button>添加</button>
+	</div>
+</div>
+	
+	<script type="text/javascript">
+		angular.module('myApp', [])
+        .controller('myCtrl', ['$scope', '$http', function($scope, $http) {
+        	$scope.portUrl_start = "http://192.168.10.133:8080/ktl/";
+        	$scope.portUrl_end = "resource/getSourceData";
+        	$scope.model = {
+        		urlList:[{
+        			title:'导出',
+        			data:[]
+        		}],
+        		detail:{}
+        	}
+
+        	$http({
+    			method:'get',
+    			url:'/getData',
+    			params:{}
+    		}).success(function(_d){
+    			if(success){
+    				$scope.model.urlList=_d.result;
+    			}
+    		})
+
+        	$scope.getDetail=function(value){
+        		$http({
+        			method:'get',
+        			url:'/getDetail',
+        			params:{value:value}
+        		}).success(function(_d){
+        			if(success){
+        				$scope.model.detail=_d.result;
+        			}
+        		})
+        	};
+        }])
+	</script>
+</body>
+</html>
